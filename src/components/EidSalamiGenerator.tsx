@@ -1,3 +1,4 @@
+
 import { useState, useEffect } from "react";
 import EidCardForm from "./EidCardForm";
 import EidCardPreview from "./EidCardPreview";
@@ -33,33 +34,46 @@ const EidSalamiGenerator = () => {
       }));
     }
   }, []);
+  
   const handleFormUpdate = (data: FormData) => {
     setCardData(data);
   };
-  return <div className="max-w-6xl mx-auto px-4 py-8">
-      <div className="text-center mb-8">
+  
+  return (
+    <div className="max-w-6xl mx-auto px-4 py-8 relative">
+      {/* Moving gradient background */}
+      <div className="absolute inset-0 -z-10 bg-gradient-moving animate-gradient-movement opacity-20"></div>
+      
+      <div className="text-center mb-8 animate-fade-in">
         <h1 className="text-4xl font-bold text-red-500">সালামি QR</h1>
-        <p className="text-xl mt-2">সালামি QR - সালামি দেন, সওয়াব কামান</p>
+        <p className="text-xl mt-2">সালামি QR - সালামি দেন, সহজায় স্ক্যান</p>
       </div>
 
       <div id="create-card" className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-8">
-        <div className="bg-white p-6 rounded-lg shadow-md">
+        <div className="bg-white p-6 rounded-lg shadow-md animate-slide-in-left">
           <EidCardForm onFormUpdate={handleFormUpdate} />
         </div>
 
-        <div className="bg-white p-6 rounded-lg shadow-md">
-          <EidCardPreview name={cardData.name} phoneNumber={cardData.phoneNumber} message={cardData.message} profileImage={cardData.profileImage} qrImage={cardData.qrImage} />
+        <div className="bg-white p-6 rounded-lg shadow-md animate-slide-in-right">
+          <EidCardPreview 
+            name={cardData.name} 
+            phoneNumber={cardData.phoneNumber} 
+            message={cardData.message} 
+            profileImage={cardData.profileImage} 
+            qrImage={cardData.qrImage} 
+          />
         </div>
       </div>
 
       <Instructions />
 
-      <div className="text-center mt-12 text-sm text-gray-600">
+      <div className="text-center mt-12 text-sm text-gray-600 animate-pulse-slow">
         <p>© 2023 Eid QR Creator. All rights reserved by Monsur</p>
         <p className="mt-1">
           Made with ❤️ for Eid-ul-Fitr
         </p>
       </div>
-    </div>;
+    </div>
+  );
 };
 export default EidSalamiGenerator;
