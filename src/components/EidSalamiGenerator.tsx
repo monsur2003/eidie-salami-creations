@@ -41,9 +41,6 @@ const EidSalamiGenerator = () => {
   
   return (
     <div className="max-w-6xl mx-auto px-4 py-8 relative">
-      {/* Moving gradient background */}
-      <div className="absolute inset-0 -z-10 bg-gradient-moving animate-gradient-movement opacity-20"></div>
-      
       <div className="text-center mb-8 animate-fade-in">
         <h1 className="text-4xl font-bold text-red-500">সালামি QR</h1>
         <p className="text-xl mt-2">সালামি QR - সালামি দেন, সহজায় স্ক্যান</p>
