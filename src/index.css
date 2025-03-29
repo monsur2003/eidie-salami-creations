@@ -1,3 +1,4 @@
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -35,20 +36,18 @@
     --radius: 0.5rem;
 
     --sidebar-background: 0 0% 98%;
-
     --sidebar-foreground: 240 5.3% 26.1%;
-
     --sidebar-primary: 240 5.9% 10%;
-
     --sidebar-primary-foreground: 0 0% 98%;
-
     --sidebar-accent: 240 4.8% 95.9%;
-
     --sidebar-accent-foreground: 240 5.9% 10%;
-
     --sidebar-border: 220 13% 91%;
-
     --sidebar-ring: 217.2 91.2% 59.8%;
+    
+    /* Custom colors for Eid Salami Card */
+    --eid-primary: 350 100% 60%;
+    --eid-secondary: 29 100% 50%;
+    --eid-accent: 210 100% 50%;
   }
 
   .dark {
@@ -97,5 +96,51 @@
 
   body {
     @apply bg-background text-foreground;
+    background-image: linear-gradient(45deg, #f1f1f1 25%, transparent 25%),
+                      linear-gradient(-45deg, #f1f1f1 25%, transparent 25%),
+                      linear-gradient(45deg, transparent 75%, #f1f1f1 75%),
+                      linear-gradient(-45deg, transparent 75%, #f1f1f1 75%);
+    background-size: 40px 40px;
+    background-position: 0 0, 0 20px, 20px -20px, -20px 0px;
   }
+}
+
+.grid-pattern {
+  background-color: white;
+  background-image: 
+    linear-gradient(rgba(220, 220, 220, 0.5) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(220, 220, 220, 0.5) 1px, transparent 1px);
+  background-size: 20px 20px;
+}
+
+.upload-area {
+  border: 2px dashed #ddd;
+  border-radius: 8px;
+  padding: 20px;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.upload-area:hover {
+  border-color: hsl(var(--eid-primary));
+  background-color: rgba(0, 0, 0, 0.02);
+}
+
+.eid-card {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  border-radius: 12px;
+}
+
+.number-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background-color: hsl(var(--eid-primary));
+  color: white;
+  font-weight: bold;
+  margin-right: 8px;
 }
