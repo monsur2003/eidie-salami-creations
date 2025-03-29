@@ -201,14 +201,14 @@ const EidCardPreview = ({
         <Button
           onClick={handleDownloadImage}
           disabled={!hasRequiredFields}
-          className="bg-amber-500 hover:bg-amber-600"
+          className="bg-gradient-to-r from-pink-500 to-rose-500 hover:from-pink-600 hover:to-rose-600 text-white"
         >
           <Download className="mr-2 h-4 w-4" /> Download as Image
         </Button>
         <Button
           onClick={handleDownloadPDF}
           disabled={!hasRequiredFields}
-          className="bg-blue-500 hover:bg-blue-600"
+          className="bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700"
         >
           <Download className="mr-2 h-4 w-4" /> Download as PDF
         </Button>

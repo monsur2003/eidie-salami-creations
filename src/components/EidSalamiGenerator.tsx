@@ -51,8 +51,6 @@ const EidSalamiGenerator = () => {
         </p>
       </div>
 
-      <Instructions />
-
       <div id="create-card" className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-8">
         <div className="bg-white p-6 rounded-lg shadow-md">
           <EidCardForm onFormUpdate={handleFormUpdate} />
@@ -69,8 +67,10 @@ const EidSalamiGenerator = () => {
         </div>
       </div>
 
+      <Instructions />
+
       <div className="text-center mt-12 text-sm text-gray-600">
-        <p>© 2023 Eid QR Creator. All rights reserved by Afnan</p>
+        <p>© 2023 Eid QR Creator. All rights reserved by Monsur</p>
         <p className="mt-1">
           Made with ❤️ for Eid-ul-Fitr
         </p>
